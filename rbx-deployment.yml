@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rbx-nginx
+  labels:
+    name: rbx-nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rbx-nginx
+  template:
+    metadata:
+      labels:
+        app: rbx-nginx
+    spec:
+      containers:
+      - name: rbx-nginx
+        image: nginx
+        ports:
+          - name: web
+            containerPort: 80
+        volumeMounts:
+          - name: rbx-share
+            mountPath: /usr/share/nginx/html
+      volumes:
+        - name: rbx-share
+          persistentVolumeClaim:
+            claimName: rbx-pvc

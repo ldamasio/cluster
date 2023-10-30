@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gph-svc
+spec:
+  selector:
+    app: gph-frontend
+  ports:
+    - port: 80
+      targetPort: 3404
+  type: LoadBalancer

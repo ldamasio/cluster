@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gph-frontend
+spec:
+  selector:
+    matchLabels:
+      app: gph-frontend
+  template:
+    metadata:
+      labels:
+        app: gph-frontend
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "3404"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+        - name: gph-frontend
+          image: ldamasio/gph-marketplace:latest
+          ports:
+          - containerPort: 3404

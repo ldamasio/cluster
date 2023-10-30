@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: odoo-deployment
+  labels:
+    app: odoo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: odoo
+  template:
+    metadata:
+      labels:
+        app: odoo
+    spec:
+      containers:
+      - name: odoo
+        image: testmailqwer/odo:14
+        ports:
+        - containerPort: 8069
+        env:
+        - name: HOST
+          value: postgres
+        - name: USER
+          value: admin
+        - name: PASSWORD
+          value: root
+---
+apiVersion: v1
+kind: Service
+metadata:    
+  name: odoo-service
+spec:
+  type: NodePort
+  selector:
+    app: odoo
+  ports:
+    - protocol: TCP
+      port: 8069
+      targetPort: 8069
+      nodePort: 30300

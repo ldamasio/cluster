@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rbx-ingress
+spec:
+  rules:
+  - host: rbxrobotica.com.br
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: rbx-svc
+            port:
+              number: 80
+
