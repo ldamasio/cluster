@@ -20,10 +20,3 @@ spec:
           image: ldamasio/gph-frontend:latest
           ports:
           - containerPort: 3404
-        volumeMounts:
-          - name: gph-share
-            mountPath: /usr/share/nginx/html
-      volumes:
-        - name: gph-share
-          persistentVolumeClaim:
-            claimName: gph-pvc
