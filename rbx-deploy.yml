@@ -1,25 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rbx-nginx
-  labels:
-    name: rbx-nginx
+  name: rbx-frontend
 spec:
-  replicas: 3
+
   selector:
     matchLabels:
-      app: rbx-nginx
+      app: rbx-frontend
   template:
     metadata:
       labels:
-        app: rbx-nginx
+        app: rbx-frontend
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "3404"
+        prometheus.io/path: "/metrics"
     spec:
       containers:
-      - name: rbx-nginx
-        image: nginx
+      - name: rbx-frontend
+        image: ldamasio/rbx-frontend:latest
         ports:
-          - name: web
-            containerPort: 80
+            containerPort: 3403
         volumeMounts:
           - name: rbx-share
             mountPath: /usr/share/nginx/html
