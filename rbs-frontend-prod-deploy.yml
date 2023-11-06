@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rbs-frontend-deploy
+spec:
+  selector:
+    matchLabels:
+      app: rbs-frontend-deploy
+  template:
+    metadata:
+      labels:
+        app: rbs-frontend-deploy
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "3404"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+        - name: rbs-frontend-deploy
+          image: ldamasio/rbs-frontend:latest
+          ports:
+          - containerPort: 3403
