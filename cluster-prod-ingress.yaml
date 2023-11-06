@@ -11,7 +11,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: gph-frontend-svc
+            name: rbs-frontend-svc
             port:
               number: 80
   - host: gph.rbxrobotica.com.br
