@@ -1,0 +1,10 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: gph-frontend-prod-cert
+spec:
+  secretName: gph-frontend-prod-cert
+  issuerRef:
+    name: gph-frontend-prod-issuer
+  dnsNames:
+  - gph.rbxrobotica.com.br
