@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crm-deploy
+spec:
+  selector:
+    matchLabels:
+      app: crm-deploy
+  template:
+    metadata:
+      labels:
+        app: crm-deploy
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "3404"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+        - name: crm-deploy
+          image: javanile/vtiger:latest
+          ports:
+          - containerPort: 3403
