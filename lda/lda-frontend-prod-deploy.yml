@@ -12,11 +12,11 @@ spec:
         app: lda-frontend-deploy
       annotations:
         prometheus.io/scrape: "true"
-        prometheus.io/port: "3404"
+        prometheus.io/port: "3408"
         prometheus.io/path: "/metrics"
     spec:
       containers:
         - name: lda-frontend-deploy
           image: ldamasio/lda-frontend:latest
           ports:
-          - containerPort: 3404
+          - containerPort: 3408
