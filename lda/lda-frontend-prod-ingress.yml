@@ -4,7 +4,7 @@ metadata:
   name: lda-frontend-ingress
 spec:
   rules:
-  - host: lda.rbxrobotica.com.br
+  - host: leandrodamasio.com
     http:
       paths:
       - pathType: Prefix
