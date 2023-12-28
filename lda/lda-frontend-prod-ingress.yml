@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: lda-frontend-ingress
+  name: lda-frontend-prod-ingress
 spec:
   rules:
   - host: leandrodamasio.com
@@ -11,7 +11,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: lda-frontend-svc
+            name: lda-frontend-prod-svc
             port:
               number: 80
 
