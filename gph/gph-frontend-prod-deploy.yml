@@ -5,18 +5,18 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: gph-frontend-deploy
+      app: gph-frontend-prod-deploy
   template:
     metadata:
       labels:
-        app: gph-frontend-deploy
+        app: gph-frontend-prod-deploy
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "3404"
         prometheus.io/path: "/metrics"
     spec:
       containers:
-        - name: gph-frontend-deploy
+        - name: gph-frontend-prod-deploy
           image: ldamasio/gph-frontend:latest
           ports:
           - containerPort: 3404
