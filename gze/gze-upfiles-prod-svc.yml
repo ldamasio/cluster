@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gze-upfiles-prod-svc
+spec:
+  selector:
+    app: gze-upfiles-prod-deploy
+  ports:
+    - port: 80
+      targetPort: 3408
+  type: LoadBalancer
