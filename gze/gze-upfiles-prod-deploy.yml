@@ -19,4 +19,4 @@ spec:
         - name: gze-upfiles-prod-deploy
           image: ldamasio/gze-upfiles:latest
           ports:
-          - containerPort: 3408
+          - containerPort: 8071
