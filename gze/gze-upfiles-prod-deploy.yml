@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: lda-frontend-prod-deploy
+  name: gze-upfiles-prod-deploy
 spec:
   selector:
     matchLabels:
-      app: lda-frontend-prod-deploy
+      app: gze-upfiles-prod-deploy
   template:
     metadata:
       labels:
-        app: lda-frontend-prod-deploy
+        app: gze-upfiles-prod-deploy
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "3408"
         prometheus.io/path: "/metrics"
     spec:
       containers:
-        - name: lda-frontend-prod-deploy
-          image: ldamasio/lda-frontend:latest
+        - name: gze-upfiles-prod-deploy
+          image: ldamasio/gze-upfiles:latest
           ports:
           - containerPort: 3408
