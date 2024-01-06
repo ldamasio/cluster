@@ -20,7 +20,7 @@ spec:
       - name: rbx-frontend
         image: ldamasio/rbx-frontend:latest
         ports:
-            containerPort: 3403
+            containerPort: 80
         volumeMounts:
           - name: rbx-share
             mountPath: /usr/share/nginx/html
