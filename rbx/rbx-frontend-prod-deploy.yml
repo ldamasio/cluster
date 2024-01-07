@@ -5,18 +5,18 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: rbx-frontend-deploy
+      app: rbx-frontend-prod-deploy
   template:
     metadata:
       labels:
-        app: rbx-frontend-deploy
+        app: rbx-frontend-prod-deploy
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "3404"
         prometheus.io/path: "/metrics"
     spec:
       containers:
-      - name: rbx-frontend-deploy
+      - name: rbx-frontend-prod-deploy
         image: ldamasio/rbx-frontend:latest
         ports:
           -  containerPort: 8000
