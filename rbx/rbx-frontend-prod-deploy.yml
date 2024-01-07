@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rbx-frontend-deploy
+  name: rbx-frontend-prod-deploy
 spec:
   selector:
     matchLabels:
@@ -16,7 +16,7 @@ spec:
         prometheus.io/path: "/metrics"
     spec:
       containers:
-      - name: rbx-frontend-proddeploy
+      - name: rbx-frontend-prod-deploy
         image: ldamasio/rbx-frontend:latest
         ports:
           -  containerPort: 8000
