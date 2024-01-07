@@ -23,7 +23,3 @@ spec:
         volumeMounts:
           - name: rbx-share
             mountPath: /usr/share/nginx/html
-      volumes:
-        - name: rbx-share
-          persistentVolumeClaim:
-            claimName: rbx-pvc
