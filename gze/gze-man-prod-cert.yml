@@ -9,4 +9,4 @@ spec:
     kind: ClusterIssuer
     name: letsencrypt-prod
   dnsNames:
-  - $DB_HOSTNAME
+  - garagemdoze-lts.com
