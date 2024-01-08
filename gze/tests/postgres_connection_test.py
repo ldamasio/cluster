@@ -4,11 +4,11 @@ conn = None
 
 try:
     conn = psycopg2.connect(
-        dbname='...',
-        user='...',
-        password='...',
-        host='...',
-        port='...',
+        dbname='postgres',
+        user='postgres',
+        password='Gze24+',
+        host='upload.garagemdoze-lts.com',
+        port='5432',
         # sslmode='require'
     )
 
