@@ -2,9 +2,16 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: lda-frontend-prod-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "lets-encrypt"
+    spec.ingressClassName: "public"
 spec:
+  tls:
+    - hosts:
+      - www.leandrodamasio.com
+      secretName: lda-frontend-prod-tls
   rules:
-  - host: leandrodamasio.com
+  - host: www.leandrodamasio.com
     http:
       paths:
       - pathType: Prefix
