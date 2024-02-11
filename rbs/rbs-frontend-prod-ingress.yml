@@ -2,13 +2,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: rbs-frontend-ingress
+    annotations:
+    cert-manager.io/cluster-issuer: "lets-encrypt"
+    spec.ingressClassName: "public"
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
   tls:
   - hosts:
-    - robsonbot.com
-    secretName: rbs-frontend-prod-cert
+    - www.robsonbot.com
+    secretName: rbs-frontend-prod-tls
   rules:
-  - host: robsonbot.com
+  - host: www.robsonbot.com
     http:
       paths:
       - pathType: Prefix
