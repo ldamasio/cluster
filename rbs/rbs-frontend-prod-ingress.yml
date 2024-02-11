@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: rbs-frontend-ingress
   annotations:
-    cert-manager.io/cluster-issuer: "rbs-lets-encrypt"
+    cert-manager.io/cluster-issuer: "lets-encrypt"
     spec.ingressClassName: "public"
     nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:

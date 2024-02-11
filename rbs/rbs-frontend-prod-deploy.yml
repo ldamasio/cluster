@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rbs-frontend-deploy
+  name: rbs-frontend-prod-deploy
 spec:
   selector:
     matchLabels:
-      app: rbs-frontend-deploy
+      app: rbs-frontend-prod-deploy
   template:
     metadata:
       labels:
-        app: rbs-frontend-deploy
+        app: rbs-frontend-prod-deploy
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "3404"
