@@ -12,11 +12,11 @@ spec:
         app: rbs-frontend-prod-deploy
       annotations:
         prometheus.io/scrape: "true"
-        prometheus.io/port: "3404"
+        prometheus.io/port: "4173"
         prometheus.io/path: "/metrics"
     spec:
       containers:
         - name: rbs-frontend-deploy
-          image: ldamasio/rbs-frontend:latest
+          image: ldamasio/rbs-frontend-prod:latest
           ports:
-          - containerPort: 3403
+          - containerPort: 4173
