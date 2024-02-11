@@ -3,9 +3,9 @@ kind: Ingress
 metadata:
   name: lda-frontend-prod-ingress
     annotations:
-      cert-manager.io/cluster-issuer: "lets-encrypt"
-      spec.ingressClassName: "public"
-      nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+    cert-manager.io/cluster-issuer: "lets-encrypt"
+    spec.ingressClassName: "public"
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
   tls:
     - hosts:
