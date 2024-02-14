@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: nginx-conf
+  name: rbs-backend-nginx-prod-configmap
 data:
   nginx.conf: |
     server {
@@ -12,7 +12,7 @@ data:
       }
 
       location / {
-        proxy_pass http://myapp:8080;
+        proxy_pass http://rbs-backend-prod-nginx-svc:8080;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
       }

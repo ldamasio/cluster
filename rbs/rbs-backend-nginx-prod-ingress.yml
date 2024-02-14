@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: rbs-backend-prod-ingress
+  name: rbs-backend-nginx-prod-ingress
   annotations:
     cert-manager.io/cluster-issuer: "lets-encrypt"
     spec.ingressClassName: "public"
@@ -10,7 +10,7 @@ spec:
   tls:
   - hosts:
     - backend.robsonbot.com
-    secretName: rbs-backend-prod-tls
+    secretName: rbs-backend-nginx-prod-tls
   rules:
   - host: backend.robsonbot.com
     http:
@@ -19,7 +19,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: rbs-backend-prod-svc
+            name: rbs-backend-nginx-prod-svc
             port:
               number: 80
 
