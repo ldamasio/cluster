@@ -4,7 +4,7 @@ metadata:
   name: rbs-backend-monolith-prod-svc
 spec:
   selector:
-    app: django
+    app: rbs-backend-monolith-prod-deploy
   ports:
     - protocol: TCP
       port: 8080

@@ -1,28 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rbs-backend-prod-nginx
+  name: rbs-backend-prod-nginx-deploy
   labels:
-    app: rbs-backend-prod-nginx
+    app: rbs-backend-prod-nginx-deploy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: rbs-backend-prod-nginx
+      app: rbs-backend-prod-nginx-deploy
   template:
     metadata:
       labels:
-        app: rbs-backend-prod-nginx
+        app: rbs-backend-prod-nginx-deploy
     spec:
       containers:
-      - name: nginx
+      - name: rbs-backend-prod-nginx-deploy
         image: nginx:stable-alpine
         ports:
         - containerPort: 8080
         volumeMounts:
-        - name: nginx-conf
+        - name: rbs-backend-nginx-prod-configmap
           mountPath: /etc/nginx/conf.d
       volumes:
-        - name: nginx-conf
+        - name: rbs-backend-nginx-prod-configmap
           configMap:
-            name: nginx-conf
+            name: rbs-backend-nginx-prod-configmap
