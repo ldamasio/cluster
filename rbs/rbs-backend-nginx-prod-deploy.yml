@@ -20,7 +20,7 @@ spec:
         command:
         - /bin/sh
         - -c
-        - until nslookup rbs-backend-nginx-prod-svc; do echo waiting for backend; sleep 2; done;
+        - until nslookup rbs-backend-monolith-prod-svc; do echo waiting for backend; sleep 2; done;
       containers:
       - name: rbs-backend-prod-nginx-deploy
         image: nginx:stable-alpine
