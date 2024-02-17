@@ -18,7 +18,7 @@ spec:
       - name: rbs-backend-monolith-prod-deploy
         image: ldamasio/lda-backend-monolith:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8000
         resources:
           requests:
             memory: "100Mi"
