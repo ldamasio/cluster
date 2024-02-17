@@ -15,17 +15,11 @@ spec:
         app: rbs-backend-prod-nginx-deploy
     spec:
       initContainers:
-      - name: init-nginx
-        image: busybox:1.28
-        command:
-        - /bin/sh
-        - -c
-        - until nslookup rbs-backend-monolith-prod-svc; do echo waiting for backend; sleep 2; done;
       containers:
       - name: rbs-backend-prod-nginx-deploy
-        image: nginx:stable-alpine
+        image: ldamasio/rbs-backend-nginx-prod
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         volumeMounts:
         - name: rbs-backend-nginx-prod-configmap
           mountPath: /etc/nginx/conf.d
