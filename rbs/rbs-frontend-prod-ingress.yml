@@ -3,14 +3,14 @@ kind: Ingress
 metadata:
   name: rbs-frontend-prod-ingress
   annotations:
-    cert-manager.io/cluster-issuer: "lets-encrypt"
+    cert-manager.io/cluster-issuer: "rbs-frontend-prod-clusterissuer"
     spec.ingressClassName: "public"
     nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
   tls:
   - hosts:
     - www.robsonbot.com
-    secretName: rbs-frontend-prod-tls
+    secretName: rbs-frontend-prod-secret
   rules:
   - host: www.robsonbot.com
     http:

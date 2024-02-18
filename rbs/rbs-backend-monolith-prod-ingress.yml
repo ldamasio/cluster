@@ -10,7 +10,7 @@ spec:
   tls:
   - hosts:
     - backend.robsonbot.com
-    secretName: rbs-frontend-prod-tls
+    secretName: rbs-backend-monolith-prod-secret
   rules:
   - host: backend.robsonbot.com
     http:
