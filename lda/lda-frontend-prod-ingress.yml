@@ -5,7 +5,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: lda-frontend-prod-clusterissuer
     spec.ingressClassName: public
-    nginx.ingress.kubernetes.io/from-to-www-redirect: true
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
   tls:
     - hosts:
