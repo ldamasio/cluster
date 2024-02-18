@@ -18,6 +18,11 @@ spec:
       - name: rbs-backend-monolith-prod-deploy
         image: ldamasio/rbs-backend-monolith-prod:latest
         env:
+        - name: DJANGO_SETTINGS_MODULE
+          valueFrom:
+            secretKeyRef:
+              name: rbs-postgres-secret
+              key: DJANGO_SETTINGS_MODULE
         - name: POSTGRES_DATABASE
           valueFrom:
             secretKeyRef:
