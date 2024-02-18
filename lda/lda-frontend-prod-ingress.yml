@@ -3,14 +3,14 @@ kind: Ingress
 metadata:
   name: lda-frontend-prod-ingress
   annotations:
-    cert-manager.io/cluster-issuer: "lda-frontend-prod-clusterissuer"
-    spec.ingressClassName: "public"
-    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+    cert-manager.io/cluster-issuer: lda-frontend-prod-clusterissuer
+    spec.ingressClassName: public
+    nginx.ingress.kubernetes.io/from-to-www-redirect: true
 spec:
   tls:
     - hosts:
       - www.leandrodamasio.com
-      secretName: lda-frontend-prod-tls
+      secretName: lda-frontend-prod-secret
   rules:
   - host: www.leandrodamasio.com
     http:
