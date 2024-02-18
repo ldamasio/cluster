@@ -17,6 +17,32 @@ spec:
       containers:
       - name: rbs-backend-monolith-prod-deploy
         image: ldamasio/rbs-backend-monolith-prod:latest
+        env:
+        - name: POSTGRES_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: rbs-postgres-secrets
+              key: POSTGRES_DATABASE
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: rbs-postgres-secrets
+              key: POSTGRES_USER
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: rbs-postgres-secrets
+              key: POSTGRES_PASSWORD
+        - name: POSTGRES_HOST
+          valueFrom:
+            secretKeyRef:
+              name: rbs-postgres-secrets
+              key: POSTGRES_HOST
+        - name: POSTGRES_PORT
+          valueFrom:
+            secretKeyRef:
+              name: rbs-postgres-secrets
+              key: POSTGRES_PORT
         ports:
         - containerPort: 8000
         resources:
@@ -26,4 +52,3 @@ spec:
           limits:
             memory: "1000Mi"
             cpu: "1500m"
-
