@@ -3,8 +3,8 @@ kind: Ingress
 metadata:
   name: lda-frontend-prod-ingress
   annotations:
-    cert-manager.io/cluster-issuer: lda-frontend-prod-clusterissuer
-    spec.ingressClassName: public
+    cert-manager.io/cluster-issuer: "lda-frontend-prod-clusterissuer"
+    spec.ingressClassName: "public"
     nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
   tls:

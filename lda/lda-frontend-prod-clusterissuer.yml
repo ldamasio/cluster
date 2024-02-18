@@ -4,10 +4,10 @@ metadata:
  name: lda-frontend-prod-clusterissuer
 spec:
  acme:
-   email:  ldamasio@gmail.com
+   email: ldamasio@gmail.com
    server: https://acme-v02.api.letsencrypt.org/directory
    privateKeySecretRef:
-     name: lda-prod-privatekey
+     name: lets-encrypt-account-key
    solvers:
    - http01:
        ingress:
