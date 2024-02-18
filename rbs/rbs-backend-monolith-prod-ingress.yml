@@ -3,9 +3,8 @@ kind: Ingress
 metadata:
   name: rbs-backend-monolith-prod-ingress
   annotations:
-    cert-manager.io/cluster-issuer: "lets-encrypt"
+    cert-manager.io/cluster-issuer: "rbs-backend-monolith-prod-clusterissuer"
     spec.ingressClassName: "public"
-    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
   tls:
   - hosts:
@@ -21,5 +20,5 @@ spec:
           service:
             name: rbs-backend-monolith-prod-svc
             port:
-              number: 80
+              number: 8000
 
