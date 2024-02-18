@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: rbs-backend-monolith-prod-deploy
-        image: ldamasio/lda-backend-monolith:latest
+        image: ldamasio/rbs-backend-monolith-prod:latest
         ports:
         - containerPort: 8000
         resources:
