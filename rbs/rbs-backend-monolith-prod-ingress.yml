@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: rbs-backend-monolith-prod-ingress
   annotations:
-    cert-manager.io/cluster-issuer: "lets-encrypt"
+    cert-manager.io/cluster-issuer: "rbs-backend-monolith-prod-clusterissuer"
     spec.ingressClassName: "public"
     nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
