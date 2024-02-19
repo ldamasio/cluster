@@ -18,6 +18,8 @@ spec:
       - name: rbs-backend-monolith-prod-deploy
         image: ldamasio/rbs-backend-monolith-prod:latest
         env:
+        - name: DJANGO_SETTINGS_MODULE
+          value: "backend.settings"
         - name: RBS_SECRET_KEY
           valueFrom:
             secretKeyRef:
