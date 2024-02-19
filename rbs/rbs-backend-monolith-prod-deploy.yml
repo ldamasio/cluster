@@ -21,8 +21,33 @@ spec:
         - name: RBS_SECRET_KEY
           valueFrom:
             secretKeyRef:
-              name: rbs-django-key-secret
+              name: rbs-django-secret
               key: RBS_SECRET_KEY
+        - name: RBS_BINANCE_API_KEY_TEST
+          valueFrom:
+            secretKeyRef:
+              name: rbs-django-secret
+              key: RBS_BINANCE_API_KEY_TEST
+        - name: RBS_BINANCE_SECRET_KEY_TEST
+          valueFrom:
+            secretKeyRef:
+              name: rbs-django-secret
+              key: RBS_BINANCE_SECRET_KEY_TEST
+        - name: RBS_BINANCE_API_KEY_PROD
+          valueFrom:
+            secretKeyRef:
+              name: rbs-django-secret
+              key: RBS_BINANCE_API_KEY_PROD
+        - name: RBS_BINANCE_SECRET_KEY_PROD
+          valueFrom:
+            secretKeyRef:
+              name: rbs-django-secret
+              key: RBS_BINANCE_SECRET_KEY_PROD
+        - name: RBS_BINANCE_API_URL_TEST
+          valueFrom:
+            secretKeyRef:
+              name: rbs-django-secret
+              key: RBS_BINANCE_API_URL_TEST
         - name: POSTGRES_DATABASE
           valueFrom:
             secretKeyRef:
