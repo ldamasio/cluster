@@ -21,4 +21,10 @@ spec:
             name: rbs-backend-monolith-prod-svc
             port:
               number: 8000
-
+      - pathType: Prefix
+        path: "/static"
+        backend:
+          service:
+            name: rbs-backend-nginx-prod-svc
+            port:
+              number: 80
