@@ -1,15 +1,15 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: rbs-backend-monolith-prod-ingress
+  name: rbs-backend-prod-ingress
   annotations:
-    cert-manager.io/cluster-issuer: "rbs-backend-monolith-prod-clusterissuer"
+    cert-manager.io/cluster-issuer: "rbs-backend-prod-clusterissuer"
     spec.ingressClassName: "public"
 spec:
   tls:
   - hosts:
     - backend.robsonbot.com
-    secretName: rbs-backend-monolith-prod-secret
+    secretName: rbs-backend-prod-secret
   rules:
   - host: backend.robsonbot.com
     http:
