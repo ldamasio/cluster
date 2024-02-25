@@ -20,10 +20,3 @@ spec:
         image: ldamasio/rbs-backend-nginx-prod
         ports:
         - containerPort: 80
-        volumeMounts:
-        - name: rbs-backend-nginx-prod-configmap
-          mountPath: /etc/nginx/conf.d
-      volumes:
-        - name: rbs-backend-nginx-prod-configmap
-          configMap:
-            name: rbs-backend-nginx-prod-configmap
