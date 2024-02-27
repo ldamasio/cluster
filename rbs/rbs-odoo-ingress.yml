@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rbs-odoo-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "rbs-odoo-clusterissuer"
+    spec.ingressClassName: "public"
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+spec:
+  tls:
+    - hosts:
+      - odoo.leandrodamasio.com
+      secretName: rbs-odoo-secret
+  rules:
+  - host: odoo.leandrodamasio.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: rbs-odoo-svc
+            port:
+              number: 80
+
