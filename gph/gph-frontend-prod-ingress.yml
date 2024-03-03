@@ -3,8 +3,9 @@ kind: Ingress
 metadata:
   name: gph-frontend-prod-ingress
   annotations:
-  cert-manager.io/cluster-issuer: "gph-frontend-prod-clusterissuer"
+    cert-manager.io/cluster-issuer: "gph-frontend-prod-clusterissuer"
 spec:
+  spec.ingressClassName: "public"
   tls:
   - hosts:
     - gph.rbxrobotica.com.br
