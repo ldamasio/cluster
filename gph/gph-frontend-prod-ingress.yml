@@ -5,7 +5,6 @@ metadata:
   annotations:
   cert-manager.io/cluster-issuer: "gph-frontend-prod-clusterissuer"
   spec.ingressClassName: "public"
-  nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
   rules:
   - host: gph.rbxrobotica.com.br
