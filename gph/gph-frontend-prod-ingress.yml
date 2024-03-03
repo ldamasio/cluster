@@ -4,7 +4,6 @@ metadata:
   name: gph-frontend-prod-ingress
   annotations:
   cert-manager.io/cluster-issuer: "gph-frontend-prod-clusterissuer"
-  spec.ingressClassName: "public"
 spec:
   tls:
   - hosts:
