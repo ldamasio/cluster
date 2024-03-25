@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gph-frontend-prod-deploy
+spec:
+  selector:
+    matchLabels:
+      app: gph-frontend-prod-deploy
+  template:
+    metadata:
+      labels:
+        app: gph-frontend-prod-deploy
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "80"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+        - name: gph-frontend-prod-deploy
+          image: ldamasio/gph-frontend:latest
+          ports:
+          - containerPort: 80
+          resources:
+            requests:
+              memory: "100Mi"
+              cpu: "250m"
+            limits:
+              memory: "200Mi"
+              cpu: "500m"
+
