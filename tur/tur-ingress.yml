@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tur-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "tur-clusterissuer"
+spec:
+  ingressClassName: "public"
+  tls:
+  - hosts:
+    - turno.leandrodamasio.com
+    secretName: tur-secret
+  rules:
+  - host: tur.leandrodamasio.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: tur-svc
+            port:
+              number: 8000

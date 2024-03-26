@@ -1,25 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gph-frontend-prod-deploy
+  name: tur-deploy
 spec:
   selector:
     matchLabels:
-      app: gph-frontend-prod-deploy
+      app: tur-deploy
   template:
     metadata:
       labels:
-        app: gph-frontend-prod-deploy
+        app: tur-deploy
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "80"
         prometheus.io/path: "/metrics"
     spec:
       containers:
-        - name: gph-frontend-prod-deploy
-          image: ldamasio/gph-frontend:latest
+        - name: tur-deploy
+          image: ldamasio/turno:latest
+          command: ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
           ports:
-          - containerPort: 80
+          - containerPort: 8000
           resources:
             requests:
               memory: "100Mi"
@@ -27,4 +28,3 @@ spec:
             limits:
               memory: "200Mi"
               cpu: "500m"
-
