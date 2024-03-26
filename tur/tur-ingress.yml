@@ -11,7 +11,7 @@ spec:
     - turno.leandrodamasio.com
     secretName: tur-secret
   rules:
-  - host: tur.leandrodamasio.com
+  - host: turno.leandrodamasio.com
     http:
       paths:
       - pathType: Prefix
