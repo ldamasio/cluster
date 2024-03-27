@@ -20,4 +20,4 @@ spec:
           service:
             name: tur-svc
             port:
-              number: 8000
+              number: 8080
