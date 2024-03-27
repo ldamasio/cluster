@@ -4,6 +4,7 @@ metadata:
   name: tur-ingress
   annotations:
     cert-manager.io/cluster-issuer: "tur-clusterissuer"
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: "public"
   tls:
