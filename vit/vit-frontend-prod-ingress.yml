@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gph-frontend-prod-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "gph-frontend-prod-clusterissuer"
+spec:
+  ingressClassName: "public"
+  tls:
+  - hosts:
+    - gph.rbxrobotica.com.br
+    secretName: gph-frontend-prod-secret
+  rules:
+  - host: gph.rbxrobotica.com.br
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: gph-frontend-prod-svc
+            port:
+              number: 80
