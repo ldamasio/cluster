@@ -2,15 +2,17 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: vit
-  namespace: argocd
+  namespace: default
 spec:
-  project: vit
+  project: default
   source:
     repoURL: https://github.com/ldamasio/vit
     targetRevision: HEAD
-    path: .
+    path: kubernetes
   destination:
     server: https://kubernetes.default.svc
     namespace: vit
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      selfHeal: true
