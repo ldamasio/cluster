@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vit
+  namespace: argocd
+spec:
+  project: vit
+  source:
+    repoURL: https://github.com/ldamasio/vit
+    targetRevision: HEAD
+    path: .
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: vit
+  syncPolicy:
+    automated: {}
