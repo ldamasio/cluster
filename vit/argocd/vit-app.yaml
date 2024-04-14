@@ -4,7 +4,7 @@ metadata:
   name: vit
   namespace: default
 spec:
-  project: default
+  project: vit-project
   source:
     repoURL: https://github.com/ldamasio/vit
     targetRevision: HEAD

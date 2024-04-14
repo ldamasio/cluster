@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Project
+metadata:
+  name: vit-project
+spec:
+  destinations:
+    - namespace: '*'
+      server: '*'
+  sourceRepos:
+    - '*'
+  clusterResourceWhitelist:
+    - '*'
+  namespaceResourceBlacklist: []
+  roles:
+    - default: []
