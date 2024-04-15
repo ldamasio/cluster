@@ -8,10 +8,10 @@ spec:
   ingressClassName: "public"
   tls:
   - hosts:
-    - metamorfose.com.br
+    - metamorfose.blog.br
     secretName: met-secret
   rules:
-  - host: gph.rbxrobotica.com.br
+  - host: metamorfose.blog.br
     http:
       paths:
       - pathType: Prefix
@@ -20,4 +20,5 @@ spec:
           service:
             name: met-svc
             port:
-              number: 80
+              number: 8069
+
