@@ -13,5 +13,7 @@ spec:
       kind: '*'
   namespaceResourceBlacklist: []
   roles:
-    - default: []
+    - name: vit-role
+      policies:
+        - default: []
 
