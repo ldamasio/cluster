@@ -15,4 +15,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
-
+  patch: |
+    spec:
+      project: vit-project
