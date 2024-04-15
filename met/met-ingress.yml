@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: met-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "met-clusterissuer"
+spec:
+  ingressClassName: "public"
+  tls:
+  - hosts:
+    - metamorfose.com.br
+    secretName: met-secret
+  rules:
+  - host: gph.rbxrobotica.com.br
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: met-svc
+            port:
+              number: 80

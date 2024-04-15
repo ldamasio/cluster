@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: met-svc
+spec:
+  selector:
+    app: met
+  ports:
+    - protocol: TCP
+      port: 8069
+      targetPort: 8069
