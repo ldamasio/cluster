@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: met-svc
 spec:
-  type: ExternalName
-  externalName: host.docker.internal
+  type: ClusterIP
   selector:
-    app: met
+    app: met-svc
   ports:
     - protocol: TCP
       port: 8069
