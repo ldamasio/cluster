@@ -8,5 +8,6 @@ spec:
     - protocol: TCP
       port: 8069
       targetPort: 8069
+      nodePort: 32069
   selector:
-    app: met-label
+    app: met-app
