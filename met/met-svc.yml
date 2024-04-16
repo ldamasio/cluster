@@ -3,7 +3,8 @@ kind: Service
 metadata:
   name: met-svc
 spec:
-  type: NodePort
+  type: ClusterIP
+  clusterIP: None
   selector:
     app: met
   ports:
