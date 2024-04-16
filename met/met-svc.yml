@@ -3,7 +3,8 @@ kind: Service
 metadata:
   name: met-svc
 spec:
-  type: ClusterIP
+  type: ExternalName
+  externalName: 84.247.161.33
   selector:
     app: met
   ports:
