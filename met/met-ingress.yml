@@ -4,8 +4,9 @@ metadata:
   name: met-ingress
   annotations:
     cert-manager.io/cluster-issuer: "met-clusterissuer"
+    spec.ingressClassName: "public"
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
-  ingressClassName: "public"
   tls:
   - hosts:
     - metamorfose.blog.br
@@ -18,7 +19,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: met-svc
+            name: 172.17.0.1
             port:
               number: 8069
 
