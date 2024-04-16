@@ -3,8 +3,10 @@ kind: Service
 metadata:
   name: met-svc
 spec:
-  type: ExternalName
-  externalName: localhost
+  type: NodePort
   ports:
     - protocol: TCP
       port: 8069
+      targetPort: 8069
+  selector:
+    app: met-label
