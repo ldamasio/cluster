@@ -19,7 +19,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: 172.17.0.1
+            name: met-svc
             port:
               number: 8069
 
