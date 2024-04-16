@@ -1,11 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: met-svc
+  name: met-external-service
 spec:
-  selector:
-    app: met
+  type: ExternalName
+  externalName: localhost
   ports:
     - protocol: TCP
       port: 8069
-      targetPort: 8069
