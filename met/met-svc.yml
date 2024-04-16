@@ -3,8 +3,8 @@ kind: Service
 metadata:
   name: met-svc
 spec:
-  type: ClusterIP
-  clusterIP: None
+  type: ExternalName
+  externalName: host.docker.internal
   selector:
     app: met
   ports:
