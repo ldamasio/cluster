@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: met-svc
+    app: met
   ports:
     - protocol: TCP
       port: 8069
