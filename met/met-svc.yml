@@ -9,4 +9,4 @@ spec:
     - name: met-svc-port
       protocol: TCP
       port: 8069
-      targetPort: met-pod-port
+      targetPort: 8069
