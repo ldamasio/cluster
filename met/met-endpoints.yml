@@ -4,6 +4,6 @@ metadata:
   name: met-endpoints
 subsets:
   - addresses:
-      - ip: 127.0.0.1
+      - ip: 10.1.65.220
     ports:
       - port: 8069
