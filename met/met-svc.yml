@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: met-svc
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: met
   ports:
