@@ -4,6 +4,8 @@ metadata:
   name: met-svc
 spec:
   type: ClusterIP
+  externalIPs:
+    - 84.247.161.33
   selector:
     app: met
   ports:
