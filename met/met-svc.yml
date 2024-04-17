@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: met-svc
 spec:
-  type: NodePort
   selector:
     app: met
   ports:
-    - protocol: TCP
+    - name: met-svc-port
+      protocol: TCP
       port: 8069
-      targetPort: 8069
+      targetPort: met-pod-port
