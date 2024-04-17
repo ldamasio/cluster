@@ -3,8 +3,7 @@ kind: Service
 metadata:
   name: met-svc
 spec:
-  type: ExternalName
-  externalName: 84.247.161.33
+  type: LoadBalancer
   selector:
     app: met
   ports:
