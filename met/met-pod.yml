@@ -4,7 +4,7 @@ metadata:
   name: met-pod
 spec:
   containers:
-  - name: met-nginx
+  - name: met-pod-nginx
     image: nginx:stable
     ports:
     - containerPort: 8069

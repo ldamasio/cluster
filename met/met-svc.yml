@@ -4,7 +4,7 @@ metadata:
   name: met-svc
 spec:
   selector:
-    app: met
+    app: met-pod
   ports:
     - name: met-svc-port
       protocol: TCP
