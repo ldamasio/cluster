@@ -21,5 +21,4 @@ spec:
           service:
             name: met-svc
             port:
-              number: 8069
-
+              number: 8081

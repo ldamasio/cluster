@@ -6,4 +6,4 @@ subsets:
   - addresses:
       - ip: 10.152.183.136
     ports:
-      - port: 8069
+      - port: 8081

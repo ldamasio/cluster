@@ -9,7 +9,7 @@ spec:
   - name: met-pod-nginx
     image: nginx:stable
     ports:
-    - containerPort: 8069
+    - containerPort: 8081
       name: met-pod-port
     volumeMounts:
     - name: met-configmap
