@@ -7,4 +7,4 @@ spec:
   issuerRef:
     name: cro-frontend-prod-issuer
   dnsNames:
-  - cro.rbxrobotica.com.br
+  - cromo.rbxrobotica.com.br
