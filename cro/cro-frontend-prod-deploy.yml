@@ -12,14 +12,14 @@ spec:
         app: cro-frontend-prod-deploy
       annotations:
         prometheus.io/scrape: "true"
-        prometheus.io/port: "80"
+        prometheus.io/port: "3000"
         prometheus.io/path: "/metrics"
     spec:
       containers:
         - name: cro-frontend-prod-deploy
           image: ldamasio/cro-frontend-prod:latest
           ports:
-          - containerPort: 80
+          - containerPort: 3000
           resources:
             requests:
               memory: "100Mi"
