@@ -8,7 +8,7 @@ spec:
   ingressClassName: "public"
   tls:
   - hosts:
-    - cro.rbxrobotica.com.br
+    - cromo.rbxrobotica.com.br
     secretName: cro-frontend-prod-secret
   rules:
   - host: cromo.rbxrobotica.com.br
