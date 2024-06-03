@@ -2,7 +2,14 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: rbx-frontend-prod-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "rbx-frontend-prod-clusterissuer"
 spec:
+  ingressClassName: "public"
+  tls:
+  - hosts:
+    - rbxrobotica.com.br
+    secretName: rbx-frontend-prod-secret
   rules:
   - host: rbxrobotica.com.br
     http:
@@ -14,4 +21,3 @@ spec:
             name: rbx-frontend-prod-svc
             port:
               number: 80
-
