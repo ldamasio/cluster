@@ -7,6 +7,7 @@ metadata:
     spec.ingressClassName: "public"
     nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
+  ingressClassName: "public"
   tls:
     - hosts:
       - www.leandrodamasio.com
@@ -22,4 +23,3 @@ spec:
             name: lda-frontend-prod-svc
             port:
               number: 80
-

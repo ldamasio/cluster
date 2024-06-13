@@ -4,14 +4,16 @@ metadata:
   name: cro-frontend-prod-ingress
   annotations:
     cert-manager.io/cluster-issuer: "cro-frontend-prod-clusterissuer"
+    spec.ingressClassName: "public"
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
   ingressClassName: "public"
   tls:
   - hosts:
-    - cromo.rbxrobotica.com.br
+    - www.cromofinanciamentos.com.br
     secretName: cro-frontend-prod-secret
   rules:
-  - host: cromo.rbxrobotica.com.br
+  - host: www.cromofinanciamentos.com.br
     http:
       paths:
       - pathType: Prefix
