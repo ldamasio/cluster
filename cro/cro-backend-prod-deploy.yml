@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cro-backend-prod-deploy
+spec:
+  selector:
+    matchLabels:
+      app: cro-backend-prod-deploy
+  template:
+    metadata:
+      labels:
+        app: cro-backend-prod-deploy
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "3000"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+        - name: cro-backend-prod-deploy
+          image: ldamasio/cro-backend-prod:latest
+          ports:
+          - containerPort: 5000
+          resources:
+            requests:
+              memory: "100Mi"
+              cpu: "250m"
+            limits:
+              memory: "200Mi"
+              cpu: "500m"
+
