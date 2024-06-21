@@ -18,6 +18,14 @@ spec:
       containers:
         - name: cro-backend-prod-deploy
           image: ldamasio/cro-backend-prod:latest
+          env:
+          - name: DJANGO_SETTINGS_MODULE
+            value: "backend.settings"
+          - name: RBS_SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: cro-django-secret
+                key: SECRET_KEY
           ports:
           - containerPort: 5000
           resources:
@@ -27,4 +35,3 @@ spec:
             limits:
               memory: "200Mi"
               cpu: "500m"
-
