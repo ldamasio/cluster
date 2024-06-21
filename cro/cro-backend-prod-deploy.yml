@@ -27,7 +27,7 @@ spec:
                 name: cro-django-secret
                 key: SECRET_KEY
           ports:
-          - containerPort: 5000
+          - containerPort: 8000
           resources:
             requests:
               memory: "100Mi"
