@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cro-backend-nginx-prod-deploy
+  labels:
+    app: cro-backend-nginx-prod-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cro-backend-nginx-prod-deploy
+  template:
+    metadata:
+      labels:
+        app: cro-backend-nginx-prod-deploy
+    spec:
+      initContainers:
+      containers:
+      - name: cro-backend-nginx-prod-deploy
+        image: ldamasio/cro-backend-nginx-prod
+        ports:
+        - containerPort: 80
