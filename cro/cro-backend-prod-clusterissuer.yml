@@ -1,12 +1,14 @@
-apiVersion: v1
-kind: Service
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
 metadata:
-  name: cro-backend-nginx-prod-svc
+ name: cro-backend-prod-clusterissuer
 spec:
-  selector:
-    app: cro-backend-nginx-prod-deploy
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: LoadBalancer
+ acme:
+   email: ldamasio@gmail.com
+   server: https://acme-v02.api.letsencrypt.org/directory
+   privateKeySecretRef:
+     name: lets-encrypt-account-key
+   solvers:
+   - http01:
+       ingress:
+         class: public
