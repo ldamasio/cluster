@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: cro-backend-prod-ingress
+  name: cro-backend-prod-ing
   annotations:
     cert-manager.io/cluster-issuer: "cro-backend-prod-clusterissuer"
     spec.ingressClassName: "public"
