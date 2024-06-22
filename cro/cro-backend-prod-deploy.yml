@@ -28,10 +28,10 @@ spec:
                 key: SECRET_KEY
           ports:
           - containerPort: 8000
-          resources:
-            requests:
-              memory: "100Mi"
-              cpu: "250m"
-            limits:
-              memory: "200Mi"
-              cpu: "500m"
+        resources:
+          requests:
+            memory: "1000Mi"
+            cpu: "750m"
+          limits:
+            memory: "1000Mi"
+            cpu: "1500m"
