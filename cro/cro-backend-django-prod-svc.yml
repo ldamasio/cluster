@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cro-backend-prod-svc
+  name: cro-backend-django-prod-svc
 spec:
   selector:
-    app: cro-backend-prod-deploy
+    app: cro-backend-django-prod-deploy
   ports:
     - protocol: TCP
       port: 8000

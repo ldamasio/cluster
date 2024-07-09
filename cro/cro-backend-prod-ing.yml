@@ -18,7 +18,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: cro-backend-prod-svc
+            name: cro-backend-django-prod-svc
             port:
               number: 8000
       - pathType: Prefix

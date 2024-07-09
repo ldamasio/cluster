@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cro-backend-prod-deploy
+  name: cro-backend-django-prod-deploy
 spec:
   selector:
     matchLabels:
-      app: cro-backend-prod-deploy
+      app: cro-backend-django-prod-deploy
   template:
     metadata:
       labels:
-        app: cro-backend-prod-deploy
+        app: cro-backend-django-prod-deploy
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "3000"
         prometheus.io/path: "/metrics"
     spec:
       containers:
-        - name: cro-backend-prod-deploy
+        - name: cro-backend-django-prod-deploy
           image: ldamasio/cro-backend-prod:latest
           env:
           - name: DJANGO_SETTINGS_MODULE
@@ -26,6 +26,16 @@ spec:
               secretKeyRef:
                 name: cro-django-secret
                 key: SECRET_KEY
+          - name: AWS_ACCESS_KEY_ID
+            valueFrom:
+              secretKeyRef:
+                name: aws-credentials
+                key: AWS_ACCESS_KEY_ID
+          - name: AWS_SECRET_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: aws-credentials
+                key: AWS_SECRET_ACCESS_KEY
           ports:
           - containerPort: 8000
           resources:
