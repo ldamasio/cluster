@@ -26,6 +26,31 @@ spec:
               secretKeyRef:
                 name: cro-django-secret
                 key: SECRET_KEY
+          - name: DB_HOST
+            valueFrom:
+              secretKeyRef:
+                name: cro-django-secret
+                key: DB_HOST
+          - name: DB_PORT
+            valueFrom:
+              secretKeyRef:
+                name: cro-django-secret
+                key: DB_PORT
+          - name: DB_NAME
+            valueFrom:
+              secretKeyRef:
+                name: cro-django-secret
+                key: DB_NAME
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: cro-django-secret
+                key: DB_USER
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: cro-django-secret
+                key: DB_PASSWORD
           - name: AWS_ACCESS_KEY_ID
             valueFrom:
               secretKeyRef:
