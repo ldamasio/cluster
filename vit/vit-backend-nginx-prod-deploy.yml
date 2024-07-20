@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vit-backend-nginx-prod-deploy
+  labels:
+    app: vit-backend-nginx-prod-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vit-backend-nginx-prod-deploy
+  template:
+    metadata:
+      labels:
+        app: vit-backend-nginx-prod-deploy
+    spec:
+      initContainers:
+      containers:
+      - name: vit-backend-nginx-prod-deploy
+        image: ldamasio/vit-backend-nginx-prod
+        ports:
+        - containerPort: 80

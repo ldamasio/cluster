@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vit-backend-nginx-prod-svc
+spec:
+  selector:
+    app: vit-backend-nginx-prod-deploy
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer

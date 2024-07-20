@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
- name: tur-clusterissuer
+ name: vit-backend-prod-clusterissuer
 spec:
  acme:
    email: ldamasio@gmail.com

@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gph-frontend-prod-deploy
+  name: vit-frontend-prod-deploy
 spec:
   selector:
     matchLabels:
-      app: gph-frontend-prod-deploy
+      app: vit-frontend-prod-deploy
   template:
     metadata:
       labels:
-        app: gph-frontend-prod-deploy
+        app: vit-frontend-prod-deploy
       annotations:
         prometheus.io/scrape: "true"
-        prometheus.io/port: "80"
+        prometheus.io/port: "3000"
         prometheus.io/path: "/metrics"
     spec:
       containers:
-        - name: gph-frontend-prod-deploy
-          image: ldamasio/gph-frontend:latest
+        - name: vit-frontend-prod-deploy
+          image: ldamasio/vit-frontend-prod:latest
           ports:
-          - containerPort: 80
+          - containerPort: 3000
           resources:
             requests:
               memory: "100Mi"

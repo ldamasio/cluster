@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: gph-frontend-prod-svc
+  name: vit-frontend-prod-svc
 spec:
   selector:
-    app: gph-frontend-prod-deploy
+    app: vit-frontend-prod-deploy
   ports:
     - port: 80
-      targetPort: 80
+      targetPort: 3000
   type: LoadBalancer

@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vit-backend-prod-ing
+  annotations:
+    cert-manager.io/cluster-issuer: "vit-backend-prod-clusterissuer"
+    spec.ingressClassName: "public"
+spec:
+  tls:
+  - hosts:
+    - backend.vitapet.rbxrobotica.com.br
+    secretName: vit-backend-prod-secret
+  rules:
+  - host: backend.vitapet.rbxrobotica.com.br
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: vit-backend-django-prod-svc
+            port:
+              number: 8000
+      - pathType: Prefix
+        path: "/static"
+        backend:
+          service:
+            name: vit-backend-nginx-prod-svc
+            port:
+              number: 80
