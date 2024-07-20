@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: vit-frontend-prod-ingress
+  name: vit-frontend-prod-ing
   annotations:
     cert-manager.io/cluster-issuer: "vit-frontend-prod-clusterissuer"
     spec.ingressClassName: "public"
