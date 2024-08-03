@@ -12,19 +12,19 @@ spec:
         app: rbx-frontend-prod-deploy
       annotations:
         prometheus.io/scrape: "true"
-        prometheus.io/port: "3404"
+        prometheus.io/port: "3000"
         prometheus.io/path: "/metrics"
     spec:
       containers:
       - name: rbx-frontend-prod-deploy
         image: ldamasio/rbx-frontend:latest
         ports:
-          - containerPort: 3000
-          resources:
-            requests:
-              memory: "100Mi"
-              cpu: "250m"
-            limits:
-              memory: "200Mi"
-              cpu: "500m"
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "250m"
+          limits:
+            memory: "200Mi"
+            cpu: "500m"
 
