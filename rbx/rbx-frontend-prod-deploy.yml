@@ -19,4 +19,12 @@ spec:
       - name: rbx-frontend-prod-deploy
         image: ldamasio/rbx-frontend:latest
         ports:
-          -  containerPort: 80
+          -  containerPort: 3000
+          resources:
+            requests:
+              memory: "100Mi"
+              cpu: "250m"
+            limits:
+              memory: "200Mi"
+              cpu: "500m"
+
