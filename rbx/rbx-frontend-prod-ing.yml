@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: rbx-frontend-prod-ingress
+  name: rbx-frontend-prod-ing
   annotations:
     cert-manager.io/cluster-issuer: "rbx-frontend-prod-clusterissuer"
 spec:
