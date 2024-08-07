@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: rbx-frontend-prod-deploy
-        image: ldamasio/rbx-frontend:latest
+        image: ldamasio/rbx-frontend-prod:latest
         ports:
         - containerPort: 3000
         resources:
